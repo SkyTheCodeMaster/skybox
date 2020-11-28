@@ -43,3 +43,18 @@ function file.loadGrpLines(path)
   end
   grpFile.close()
 end
+
+function file.getSize(path)
+  local size = 0
+  local files = fs.list(path)
+  for i=1,#files do
+    if fs.isDir(fs.combine(path, files[i])) then
+      size = size + file.getSize(fs.combine(path, files[i]))
+    else
+      size = size + fs.getSize(fs.combine(path, files[i]))
+    end
+  end
+  return size
+end
+
+return file
