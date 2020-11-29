@@ -120,7 +120,7 @@ function tm.face(sDirection)
     elseif facing == "west" then tm.turnRight() tm.turnRight()
     elseif facing == "south" then tm.turnLeft() end
   end
-  tm.savePos()
+  tm.save()
 end
 
 function tm.getPosition()
