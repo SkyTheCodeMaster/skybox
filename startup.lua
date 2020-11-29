@@ -15,7 +15,6 @@ term.clear()
 drawGui()
 
 local function fillGPS()
-  sleep(5)
   local x,y,z = tm.getPosition()
   local fX,fY,fZ = math.floor(fX+0.5),math.floor(fY+0.5),math.floor(fZ+0.5)
   term.setCursorPos(20,5)
@@ -24,6 +23,7 @@ local function fillGPS()
   term.write(tostring(fY))
   term.setCursorPos(20,7)
   term.write(tostring(fZ))
+  sleep(0.2)
 end
 
 local function main()
