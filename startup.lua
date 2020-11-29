@@ -16,7 +16,7 @@ drawGui()
 
 local function fillGPS()
   local x,y,z = tm.getPosition()
-  local fX,fY,fZ = math.floor(fX+0.5),math.floor(fY+0.5),math.floor(fZ+0.5)
+  local fX,fY,fZ = math.floor(X+0.5),math.floor(Y+0.5),math.floor(Z+0.5)
   term.setCursorPos(20,5)
   term.write(tostring(fX))
   term.setCursorPos(20,6)
