@@ -89,8 +89,8 @@ function tm.turnLeft()
   savePos()
 end
 
-function tm.turnLeft()
-  turtle.turnLeft()
+function tm.turnRight()
+  turtle.turnRight()
   if facing == "north" then facing = "east"
   elseif facing == "west" then facing = "north"
   elseif facing == "south" then facing = "west"
@@ -100,6 +100,27 @@ end
 
 function tm.setPosition(x,y,z,facing)
   tLoc[1],tLoc[2],tLoc[3],tLoc[4] = x,y,z,facing
+end
+
+function tm.face(sDirection)
+  if sDirection == "north" then
+    if facing == "west" then tm.turnRight()
+    elseif facing == "south" then tm.turnRight() tm.turnRight()
+    elseif facing == "east" then tm.turnLeft() end
+  elseif sDirection == "west" then
+    if facing == "south" then tm.turnRight()
+    elseif facing == "east" then tm.turnRight() tm.turnRight()
+    elseif facing == "north" then tm.turnLeft() end
+  elseif sDirection == "south" then
+    if facing == "east" then tm.turnRight()
+    elseif facing == "north" then tm.turnRight() tm.turnRight()
+    elseif facing == "west" then tm.turnLeft() end
+  elseif sDirection == "east" then
+    if facing == "north" then tm.turnRight()
+    elseif facing == "west" then tm.turnRight() tm.turnRight()
+    elseif facing == "south" then tm.turnLeft() end
+  end
+  tm.savePos()
 end
 
 function tm.getPosition()
