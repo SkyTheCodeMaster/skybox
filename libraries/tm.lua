@@ -102,7 +102,7 @@ function tm.setPosition(x,y,z,facing)
   tLoc[1],tLoc[2],tLoc[3],tLoc[4] = x,y,z,facing
 end
 
-function tm.getPositon()
+function tm.getPosition()
   return x,y,z,facing
 end
 
