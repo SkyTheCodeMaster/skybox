@@ -14,20 +14,28 @@ term.clear()
 
 drawGui()
 
+local drawGPS = true
+
 local function fillGPS()
-  local x,y,z = tm.getPosition()
-  local fX,fY,fZ = math.floor(x+0.5),math.floor(y+0.5),math.floor(z+0.5)
-  term.setCursorPos(20,5)
-  term.write(tostring(fX))
-  term.setCursorPos(20,6)
-  term.write(tostring(fY))
-  term.setCursorPos(20,7)
-  term.write(tostring(fZ))
-  sleep(0.2)
+  while true do
+    if drawGPS then
+      local x,y,z = tm.getPosition()
+      local fX,fY,fZ = math.floor(x+0.5),math.floor(y+0.5),math.floor(z+0.5)
+      term.setCursorPos(20,5)
+      term.write(tostring(fX))
+      term.setCursorPos(20,6)
+      term.write(tostring(fY))
+      term.setCursorPos(20,7)
+      term.write(tostring(fZ))
+      sleep(0.2)
+    end
+  end
 end
 
 local function main()
-  sleep(5)
+  while true do
+    sleep(5)
+  end
 end
 
 parallel.waitForAny(main,fillGPS)
