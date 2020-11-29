@@ -1,7 +1,8 @@
 Draws text on screen
 
+TEXT,19,2,128,1,GPS
 TEXT,19,3,128,1,X
 TEXT,19,4,128,1,Y
 TEXT,19,5,128,1,Z
 
-TEXT,1,1,1,32768,SkyBox Delivery Turtle
+TEXT,2,1,1,32768,SkyBox Delivery Turtle
